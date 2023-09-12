@@ -27,6 +27,12 @@ export const useProfileStore = defineStore('profile', () => {
     val = val ?? currentTheme.value.value;
     localStorage.setItem('theme', val);
     colorMode.preference = val;
+    const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+    if (val === 'system') {
+      val = systemTheme;
+    }
     document.documentElement.classList.remove(...THEMES.map(t => t.value));
     document.documentElement.classList.add(val);
     document.documentElement.setAttribute('data-theme', val);
