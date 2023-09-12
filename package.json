@@ -38,7 +38,7 @@
     "@nuxt/devtools": "^0.8.3",
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@nuxtjs/i18n": "^8.0.0-rc.4",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
