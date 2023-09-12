@@ -1,14 +1,19 @@
 import os from 'node:os';
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 interface PkgJson {
   [key: string]: string | PkgJson;
 }
 
 export default defineEventHandler(() => {
+  console.log('os', dirname(fileURLToPath(import.meta.url)));
   const pkgJson = JSON.parse(
-    readFileSync(resolve(process.cwd(), 'package.json'), 'utf-8')
+    readFileSync(
+      join(dirname(fileURLToPath(import.meta.url)), '../../', 'package.json'),
+      'utf-8'
+    )
   ) as PkgJson;
   return {
     cpus: [...new Set(os.cpus().map(cpu => cpu.model))].join(', '),
