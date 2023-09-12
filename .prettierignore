@@ -1,0 +1,21 @@
+# Nuxt dev/build outputs
+.output
+.nuxt
+.nitro
+.cache
+dist
+
+node_modules
+auto-imports.d.ts
+types/__services__/**/*
+*-lock*
+.env*
+*.mp4
+*ignore*
+
+Dockerfile
+
+*.ico
+*.svg
+*.png
+*.*rc

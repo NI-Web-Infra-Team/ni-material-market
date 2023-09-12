@@ -1,0 +1,86 @@
+{
+  "name": "nuxt3-template",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@8.7.5",
+  "engines": {
+    "node": ">=18.16.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "nuxt prepare",
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 13000 --dotenv .env.development",
+    "upgrade-dep": "taze -w -i",
+    "cz": "git-cz",
+    "semantic-release": "semantic-release",
+    "icon-gen": "node ./scripts/generate-icons.cjs",
+    "lint": "vue-tsc --noEmit && eslint .",
+    "lint-fix": "prettier . --write && eslint . --fix",
+    "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi"
+  },
+  "dependencies": {
+    "echarts": "^5.4.3",
+    "element-plus": "^2.3.12",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.1.6",
+    "tslib": "^2.6.2",
+    "vue-echarts": "^6.6.1"
+  },
+  "devDependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "eslint-plugin-jsdoc": "^46.6.0",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@element-plus/nuxt": "^1.0.5",
+    "@mockoon/cli": "^4.1.0",
+    "@nuxt/devtools": "^0.8.3",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/i18n": "^8.0.0-rc.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/gitlab": "^12.0.5",
+    "@semantic-release/gitlab-config": "^12.0.1",
+    "@types/lodash-es": "^4.17.9",
+    "@types/node": "^20.6.0",
+    "@vueuse/components": "^10.4.1",
+    "@vueuse/core": "^10.4.1",
+    "@vueuse/nuxt": "^10.4.1",
+    "autoprefixer": "^10.4.15",
+    "commander": "^11.0.0",
+    "daisyui": "^3.7.3",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "git-cz": "^4.9.0",
+    "icon-gen": "^3.0.1",
+    "lint-staged": "^14.0.1",
+    "nuxt": "^3.7.1",
+    "nuxt-icon": "^0.5.0",
+    "nuxt-vite-legacy": "^1.0.1",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "sharp": "^0.32.5",
+    "simple-git-hooks": "^2.9.0",
+    "swagger-typescript-api": "^13.0.3",
+    "tailwindcss": "^3.3.3",
+    "taze": "^0.11.2",
+    "terser": "^5.19.4",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vue-tsc": "^1.8.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
+}

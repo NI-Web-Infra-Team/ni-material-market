@@ -1,0 +1,33 @@
+{
+  "favicon": {
+    "defaultSize": 32,
+    "defaultRel": "shortcut icon",
+    "sizes": [16, 24, 32, 48, 64, 128, 256],
+    "header": {
+      "attrs": {
+        "rel": "icon"
+      }
+    }
+  },
+  "android": {
+    "defaultSize": 192,
+    "sizes": [48, 72, 96, 144, 168, 192, 512],
+    "header": {
+      "attrs": {
+        "rel": "icon",
+        "type": "image/png"
+      }
+    }
+  },
+  "ios": {
+    "defaultSize": 180,
+    "sizes": [
+      16, 32, 58, 64, 76, 80, 87, 114, 120, 128, 152, 167, 180, 256, 512, 1024
+    ],
+    "header": {
+      "attrs": {
+        "rel": "apple-touch-icon"
+      }
+    }
+  }
+}
