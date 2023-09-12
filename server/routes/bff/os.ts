@@ -11,7 +11,11 @@ export default defineEventHandler(() => {
   console.log('os', dirname(fileURLToPath(import.meta.url)));
   const pkgJson = JSON.parse(
     readFileSync(
-      join(dirname(fileURLToPath(import.meta.url)), '../../', 'package.json'),
+      join(
+        dirname(fileURLToPath(import.meta.url)),
+        process.env.NODE_ENV === 'development' ? '../../' : './',
+        'package.json'
+      ),
       'utf-8'
     )
   ) as PkgJson;
