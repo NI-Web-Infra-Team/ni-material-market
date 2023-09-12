@@ -4,6 +4,8 @@
 🏗 建设中
 </pre>
 
+[English](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/blob/main/README.md)
+
 ## 安装
 
 本项目采用 pnpm 作为包管理工具：

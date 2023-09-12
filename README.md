@@ -4,6 +4,8 @@
 🏗 Working in Progress
 </pre>
 
+[简体中文](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/blob/main/README-zh_CN.md)
+
 ## Setup
 
 This project uses pnpm as the package management tool:
