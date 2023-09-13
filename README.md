@@ -1,66 +1,64 @@
 # Nuxt 3 with Element Plus Admin template
 
-<pre align="center">
-🏗 Working in Progress
-</pre>
+<p align="center">
+  <a href="https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin">
+    <img src="https://img.shields.io/badge/%F0%9F%8F%97-%E5%BB%BA%E8%AE%BE%E4%B8%AD-%23cacaca" />
+  </a>
+  <a href="https://nodejs.org/dist/latest-v18.x/docs/api/">
+    <img src="https://img.shields.io/badge/Node.js-%3E%3D18.16.0-%23339933?logo=nodedotjs" />
+  </a>
+</p>
 
-[简体中文](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/blob/main/README-zh_CN.md)
+我们提供了一个[在线体验](https://nuxt3.navinfo.dev/)的环境。
 
-## Setup
+## ✨ 特性
 
-This project uses pnpm as the package management tool:
+- [x] 支持 TypeScript
+- [x] 支持 SSR
+- [x] 支持 Tailwind CSS
+- [x] 支持多语言
+- [x] 支持暗黑模式
+- [x] 支持自动化生成 Icon
+- [x] 支持触摸设备
+- [x] 支持自动化生成 CHANGELOG
+- [x] 支持 Eslint
+- [ ] 支持 Docker 部署
+- [ ] 支持 CI/CD
+- [x] 支持 SSR 本地缓存
+- [x] 支持通过 OpenAPI/Swagger 自动化生成 TS 类型
 
-> Modify the `packageManager` field in `package.json` and the `preinstall` and `pnpm` commands.
+## 🖥 兼容环境
 
-### Setting up China mirrors
+- 后端要求 Node.js >= 18.16.0
+- 包管理器 pnpm >= 8.7.5
+- Edge/Firefox/Chrome 均兼容到 Windows 7/8/8.1 以及 Windows Server 2012/2012 R2 支持的[最后版本](https://support.google.com/chrome/thread/185534985/sunsetting-support-for-windows-7-8-8-1-and-windows-server-2012-and-2012-r2-in-early-2023?hl=en)。
+- 对于 Safari 则为现代浏览器版本。
 
-```bash
-pnpm config set sharp_binary_host "https://npmmirror.com/mirrors/sharp"
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/node.js/node.js_48x48.png" alt="Node.js" />](http://godban.github.io/browsers-support-badges/) Node.js | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png" alt="Edge" />](http://godban.github.io/browsers-support-badges/) Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png" alt="Firefox" />](http://godban.github.io/browsers-support-badges/) Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png" alt="Chrome" />](http://godban.github.io/browsers-support-badges/) Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png" alt="Safari" />](http://godban.github.io/browsers-support-badges/) Safari |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                    >= 18.16.0                                                                                    |                                                                                >= 109                                                                                |                                                                             >= 115 \|\| Firefox ESR                                                                              |                                                                                    >= 109                                                                                    |                                                                               last 2 versions                                                                                |
 
-pnpm config set sharp_libvips_binary_host "https://npmmirror.com/mirrors/sharp-libvips"
+## 📦 快速上手
+
+```shell
+# clone 项目
+> git clone --depth=1 https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin.git
+# 安装依赖
+> pnpm install
+# 本地启动 http://localhost:13000
+> pnpm run dev
 ```
 
-### Install dependencies
+## 📖 文档
 
-```bash
-pnpm install
-```
+- [项目文档](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/wiki)
+- [Nuxt 3](https://v3.nuxtjs.org/)
+- [Element Plus](https://element-plus.org/#/zh-CN)
 
-## Development
+## 🤝 参与共建
 
-Started by default at `http://localhost:13000`:
+请查看我们的[贡献指南](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/blob/main/.github/CONTRIBUTING.zh-CN.md)。
 
-```bash
-pnpm run dev
-```
+### 🛡 License
 
-## Publish
-
-Packaging:
-
-```bash
-pnpm run build
-```
-
-## Dependency update
-
-```bash
-pnpm run upgrade:dep
-```
-
-## Features
-
-- [x] TypeScript support
-- [x] SSR support
-- [x] Tailwind CSS support
-- [x] Multi-language support
-- [x] Dark Mode Support
-- [x] Automated Icon Generation
-- [x] Support for touch devices
-- [ ] Improve Documentation
-- [x] Support for automated CHANGELOG generation
-- [x] Support Eslint
-- [ ] Support Docker Deployment
-- [ ] CI/CD support
-- [x] Support for SSR Local Caching
-- [x] Support for automated generation of TS types via OpenAPI/Swagger
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin?ref=badge_large&issueType=license)
