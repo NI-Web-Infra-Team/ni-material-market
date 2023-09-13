@@ -2,13 +2,10 @@ import os from 'node:os';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-
-interface PkgJson {
-  [key: string]: string | PkgJson;
-}
+import type { PackageD } from '~/types/__quicktype__/package.d';
+import type { Os } from '~/types/example.d';
 
 export default defineEventHandler(() => {
-  console.log('os', dirname(fileURLToPath(import.meta.url)));
   const pkgJson = JSON.parse(
     readFileSync(
       join(
@@ -18,7 +15,7 @@ export default defineEventHandler(() => {
       ),
       'utf-8'
     )
-  ) as PkgJson;
+  ) as PackageD;
   return {
     cpus: [...new Set(os.cpus().map(cpu => cpu.model))].join(', '),
     hostname: os.hostname(),
@@ -28,6 +25,7 @@ export default defineEventHandler(() => {
     totalmem: `${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB`,
     type: os.type(),
     version: pkgJson.version,
-    serverTime: new Date().toLocaleString()
-  };
+    serverTime: new Date().toLocaleString(),
+    repositoryUrl: pkgJson.repository.url
+  } as Os;
 });

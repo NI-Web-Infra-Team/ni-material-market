@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { UseImage } from '@vueuse/components';
+import type { Os } from '~/types/example.d';
 
+const { data: osData } = await useBffFetch<Os>('/os');
 const config = useRuntimeConfig();
 const { t } = useI18n();
 </script>
@@ -26,8 +28,9 @@ const { t } = useI18n();
     </div>
     <div class="md:tw-place-self-center md:tw-justify-self-end">
       <div class="tw-grid tw-grid-flow-col tw-gap-4">
-        <el-link type="primary" href="link"> Link </el-link>
-        <el-link type="primary" href="link" disabled> Link </el-link>
+        <el-link type="primary" :href="osData?.repositoryUrl ?? '/'">
+          Github
+        </el-link>
       </div>
     </div>
   </el-footer>

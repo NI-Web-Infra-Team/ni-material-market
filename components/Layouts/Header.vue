@@ -21,6 +21,7 @@ const config = useRuntimeConfig();
     <i class="tw-grow" />
     <ClientOnly>
       <el-space :size="8">
+        <LayoutsJumpToGithub />
         <LayoutsToggleTheme />
         <LayoutsToggleLocale />
       </el-space>
