@@ -4,21 +4,28 @@
   "private": true,
   "license": "MIT",
   "packageManager": "pnpm@8.7.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin"
+  },
   "engines": {
     "node": ">=18.16.0"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "nuxt prepare",
+    "postinstall": "concurrently \"pnpm:nuxt-prepare\" \"pnpm:generate-pkg-type\"",
+    "nuxt-prepare": "nuxt prepare",
     "build": "nuxt build",
-    "dev": "nuxt dev --port 13000 --dotenv .env.development",
+    "dev": "concurrently --raw \"pnpm:generate-pkg-type\" \"pnpm:nuxt-dev\"",
+    "nuxt-dev": "nuxt dev --port 13000 --dotenv .env.development",
     "upgrade-dep": "taze -w -i",
     "cz": "git-cz",
     "semantic-release": "semantic-release",
     "icon-gen": "node ./scripts/generate-icons.cjs",
     "lint": "vue-tsc --noEmit && eslint .",
     "lint-fix": "prettier . --write && eslint . --fix",
-    "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi"
+    "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi",
+    "generate-pkg-type": "quicktype package.json -o ./types/__quicktype__/package.d.ts --just-types"
   },
   "dependencies": {
     "echarts": "^5.4.3",
@@ -29,8 +36,6 @@
     "vue-echarts": "^6.6.1"
   },
   "devDependencies": {
-    "@pinia/nuxt": "^0.4.11",
-    "eslint-plugin-jsdoc": "^46.6.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@element-plus/nuxt": "^1.0.5",
@@ -39,6 +44,7 @@
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
+    "@pinia/nuxt": "^0.4.11",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
@@ -51,10 +57,12 @@
     "@vueuse/nuxt": "^10.4.1",
     "autoprefixer": "^10.4.15",
     "commander": "^11.0.0",
+    "concurrently": "^8.2.1",
     "daisyui": "^3.7.3",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsdoc": "^46.6.0",
     "eslint-plugin-jsonc": "^2.9.0",
     "git-cz": "^4.9.0",
     "icon-gen": "^3.0.1",
@@ -64,6 +72,7 @@
     "nuxt-vite-legacy": "^1.0.1",
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
+    "quicktype": "^23.0.75",
     "sass": "^1.66.1",
     "sharp": "^0.32.5",
     "simple-git-hooks": "^2.9.0",

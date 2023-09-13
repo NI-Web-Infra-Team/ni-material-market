@@ -7,7 +7,7 @@ dist
 
 node_modules
 auto-imports.d.ts
-types/__services__/**/*
+types/__*__/**/*
 *-lock*
 .env*
 *.mp4

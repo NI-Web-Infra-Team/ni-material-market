@@ -3,3 +3,4 @@ Dockerfile
 *.md
 *ignore*
 *.env*
+types/__*__/**/*
