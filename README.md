@@ -1,4 +1,6 @@
 # Nuxt 3 with Element Plus Admin template
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin?ref=badge_shield)
+
 
 <pre align="center">
 🏗 Working in Progress
@@ -64,3 +66,7 @@ pnpm run upgrade:dep
 - [ ] CI/CD support
 - [x] Support for SSR Local Caching
 - [x] Support for automated generation of TS types via OpenAPI/Swagger
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin?ref=badge_large)
