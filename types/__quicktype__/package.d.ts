@@ -10,15 +10,6 @@ export interface PackageD {
     dependencies:       Dependencies;
     devDependencies:    DevDependencies;
     "simple-git-hooks": SimpleGitHooks;
-    config:             Config;
-}
-
-export interface Config {
-    commitizen: Commitizen;
-}
-
-export interface Commitizen {
-    path: string;
 }
 
 export interface Dependencies {
@@ -31,6 +22,7 @@ export interface Dependencies {
 }
 
 export interface DevDependencies {
+    "@atao60/fse-cli":                  string;
     "@commitlint/cli":                  string;
     "@commitlint/config-conventional":  string;
     "@element-plus/nuxt":               string;
@@ -52,7 +44,6 @@ export interface DevDependencies {
     "@vueuse/nuxt":                     string;
     autoprefixer:                       string;
     commander:                          string;
-    concurrently:                       string;
     daisyui:                            string;
     eslint:                             string;
     "eslint-config-prettier":           string;
@@ -62,6 +53,7 @@ export interface DevDependencies {
     "git-cz":                           string;
     "icon-gen":                         string;
     "lint-staged":                      string;
+    "npm-run-all":                      string;
     nuxt:                               string;
     "nuxt-icon":                        string;
     "nuxt-vite-legacy":                 string;
@@ -90,20 +82,22 @@ export interface Repository {
 }
 
 export interface Scripts {
-    preinstall:          string;
-    postinstall:         string;
-    "nuxt-prepare":      string;
-    build:               string;
-    dev:                 string;
-    "nuxt-dev":          string;
-    "upgrade-dep":       string;
-    cz:                  string;
-    "semantic-release":  string;
-    "icon-gen":          string;
-    lint:                string;
-    "lint-fix":          string;
-    "generate-api-type": string;
-    "generate-pkg-type": string;
+    preinstall:           string;
+    postinstall:          string;
+    "nuxt-prepare":       string;
+    build:                string;
+    "nuxt-build":         string;
+    dev:                  string;
+    "nuxt-dev":           string;
+    "upgrade-dep":        string;
+    cz:                   string;
+    "semantic-release":   string;
+    "icon-gen":           string;
+    lint:                 string;
+    "lint-fix":           string;
+    "generate-api-type":  string;
+    "generate-pkg-type":  string;
+    "pm2-copy-to-output": string;
 }
 
 export interface SimpleGitHooks {

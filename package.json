@@ -13,10 +13,11 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "concurrently \"pnpm:nuxt-prepare\" \"pnpm:generate-pkg-type\"",
+    "postinstall": "run-p nuxt-prepare generate-pkg-type",
     "nuxt-prepare": "nuxt prepare",
-    "build": "nuxt build",
-    "dev": "concurrently --raw \"pnpm:generate-pkg-type\" \"pnpm:nuxt-dev\"",
+    "build": "run-s nuxt-build pm2-copy-to-output",
+    "nuxt-build": "nuxt build",
+    "dev": "run-s generate-pkg-type nuxt-dev",
     "nuxt-dev": "nuxt dev --port 13000 --dotenv .env.development",
     "upgrade-dep": "taze -w -i",
     "cz": "git-cz",
@@ -25,7 +26,8 @@
     "lint": "vue-tsc --noEmit && eslint .",
     "lint-fix": "prettier . --write && eslint . --fix",
     "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi",
-    "generate-pkg-type": "quicktype package.json -o ./types/__quicktype__/package.d.ts --just-types"
+    "generate-pkg-type": "quicktype package.json -o ./types/__quicktype__/package.d.ts --just-types",
+    "pm2-copy-to-output": "fse copy --errorOnExist ecosystem.config.cjs .output/ecosystem.config.cjs"
   },
   "dependencies": {
     "echarts": "^5.4.3",
@@ -36,6 +38,7 @@
     "vue-echarts": "^6.6.1"
   },
   "devDependencies": {
+    "@atao60/fse-cli": "^0.1.9",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@element-plus/nuxt": "^1.0.5",
@@ -57,7 +60,6 @@
     "@vueuse/nuxt": "^10.4.1",
     "autoprefixer": "^10.4.15",
     "commander": "^11.0.0",
-    "concurrently": "^8.2.1",
     "daisyui": "^3.7.3",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
@@ -67,6 +69,7 @@
     "git-cz": "^4.9.0",
     "icon-gen": "^3.0.1",
     "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
     "nuxt": "^3.7.1",
     "nuxt-icon": "^0.5.0",
     "nuxt-vite-legacy": "^1.0.1",
@@ -86,10 +89,5 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
   }
 }
