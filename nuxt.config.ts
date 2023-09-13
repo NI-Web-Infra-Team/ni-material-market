@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     rootId: 'app',
     baseURL: BASE_URL,
     head: {
+      title: 'Nuxt Element Plus Admin',
       script: [{ src: '/js/dark-mode-ponyfill.js' }],
       link: [
         {
