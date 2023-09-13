@@ -1,6 +1,5 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-// import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { DEFAULT_LOCALE, SUPPORT_LOCALES } from './project.config';
 import iconConfig from './icon.config.json';
 const browserslist = readFileSync(
