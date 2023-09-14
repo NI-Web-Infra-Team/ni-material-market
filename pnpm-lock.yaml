@@ -51,7 +51,7 @@ devDependencies:
     version: 12.1.0(eslint@8.49.0)(typescript@5.2.2)
   '@nuxtjs/i18n':
     specifier: npm:@nuxtjs/i18n-edge
-    version: /@nuxtjs/i18n-edge@8.0.0-rc.4-28243121.72328da(vue@3.3.4)
+    version: /@nuxtjs/i18n-edge@8.0.0-rc.4-28244271.fbea0d9(vue@3.3.4)
   '@pinia/nuxt':
     specifier: ^0.4.11
     version: 0.4.11(typescript@5.2.2)(vue@3.3.4)
@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^11.0.0
     version: 11.0.0
   daisyui:
-    specifier: ^3.7.3
-    version: 3.7.3(ts-node@10.9.1)
+    specifier: ^3.7.4
+    version: 3.7.4(ts-node@10.9.1)
   eslint:
     specifier: ^8.49.0
     version: 8.49.0
@@ -2978,8 +2978,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxtjs/i18n-edge@8.0.0-rc.4-28243121.72328da(vue@3.3.4):
-    resolution: {integrity: sha512-ESpJh6jLfTViqzs64iGWqpRmVZYAiD7om/MuB2T/VQE58S4h1gFAGMNBPcE/tVqobQxonz+KkYQhkkFvvTXByg==}
+  /@nuxtjs/i18n-edge@8.0.0-rc.4-28244271.fbea0d9(vue@3.3.4):
+    resolution: {integrity: sha512-dzYt71e3URk+0Gt2qgtJAaG3UAwk/AXRud3idHw2rU43HuNwUMGhml7Q9BrBCmsuk5YwNkm+GztotK5M9cMpyA==}
     engines: {node: ^14.16.0 || >=16.11.0}
     dependencies:
       '@intlify/shared': 9.4.0
@@ -5909,8 +5909,8 @@ packages:
     resolution: {integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==}
     dev: true
 
-  /daisyui@3.7.3(ts-node@10.9.1):
-    resolution: {integrity: sha512-gKlz3RwfaukZxf8nQZsDAZ7quUSi7F8HjGGB34tkHruvfQB9cgVDQsmqUqSQtkAJYvzbrg/3dLUa9+5jF4iC1A==}
+  /daisyui@3.7.4(ts-node@10.9.1):
+    resolution: {integrity: sha512-hAgTomIK8RDQ/RLH9Z2NxZiNVAO40w08FlhgYS/8CTFF+wggeHeNJ0qNBHWAJJzhjD8UU2u4PZ4nc4r9rwfTLw==}
     engines: {node: '>=16.9.0'}
     dependencies:
       colord: 2.9.3
