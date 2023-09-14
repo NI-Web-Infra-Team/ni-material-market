@@ -5,12 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    target-branch: "development"
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
+    target-branch: 'development'
     schedule:
-      interval: "weekly"
-      time: "09:30"
-      timezone: "Asia/Shanghai"
+      interval: 'weekly'
+      time: '09:30'
+      timezone: 'Asia/Shanghai'
     reviewers:
-      - "NI-Web-Infra-Team/maintainer"
+      - 'NI-Web-Infra-Team/maintainer'
