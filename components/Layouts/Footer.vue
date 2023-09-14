@@ -2,7 +2,7 @@
 import { UseImage } from '@vueuse/components';
 import type { Os } from '~/types/example.d';
 
-const { data: osData } = await useBffFetch<Os>('/os');
+const { data: osData } = await useBffExampleFetch<Os>('/os');
 const config = useRuntimeConfig();
 const { t } = useI18n();
 </script>

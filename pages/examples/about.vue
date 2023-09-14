@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const { data: osData } = await useBffFetch('/os');
+const { data: osData } = await useBffExampleFetch('/os');
 
 const descData = computed(() =>
   Object.entries(osData.value ?? {}).map(([key, value]) => ({

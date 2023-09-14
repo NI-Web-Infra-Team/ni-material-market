@@ -13,7 +13,7 @@ const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
   <el-breadcrumb>
     <el-breadcrumb-item
       class="tw-mb-3"
-      :to="{ path: getRouterByName('layout-example-no-header').path }"
+      :to="{ path: getRouterByName('examples-layout-no-header').path }"
       >{{
         t('example.backToText', { text: t('example.noHeader') })
       }}</el-breadcrumb-item

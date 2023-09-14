@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data: petsData } = await useOpenapiFetch<Record<string, string>[]>(
+const { data: petsData } = await useOpenapiExampleFetch<
+  Record<string, string>[]
+>(
   `/findByStatus?${new URLSearchParams({
     status: 'available'
   }).toString()}`

@@ -4,7 +4,7 @@ import type { Os } from '~/types/example.d';
 const repositoryUrl = ref('');
 
 onMounted(async () => {
-  const { data: osData } = await useBffFetch<Os>('/os');
+  const { data: osData } = await useBffExampleFetch<Os>('/os');
   repositoryUrl.value = osData.value?.repositoryUrl ?? '/';
 });
 

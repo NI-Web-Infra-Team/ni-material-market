@@ -38,7 +38,7 @@ function getRoutePathByName(name: string) {
             {{ t('example.homePage') }}
           </template>
         </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('about')">
+        <el-menu-item :index="getRoutePathByName('examples-about')">
           <el-icon>
             <Icon name="mdi:information-slab-circle-outline" />
           </el-icon>
@@ -46,41 +46,41 @@ function getRoutePathByName(name: string) {
             {{ t('example.about') }}
           </template>
         </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('openapi-example')">
+        <el-menu-item :index="getRoutePathByName('examples-openapi')">
           <el-icon>
             <Icon name="mdi:hexagon-multiple-outline" />
           </el-icon>
           <template #title>{{ t('example.openApiExample') }}</template>
         </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('local-cache')">
+        <el-menu-item :index="getRoutePathByName('examples-local-cache')">
           <el-icon>
             <Icon name="mdi:database" />
           </el-icon>
           <template #title>{{ t('example.routeCacheExample') }}</template>
         </el-menu-item>
-        <el-sub-menu index="layout-example">
+        <el-sub-menu index="layout">
           <template #title>
             <el-icon><Icon name="mdi:page-layout-sidebar-left" /></el-icon>
             <span>{{ t('example.layoutExample') }}</span>
           </template>
           <el-menu-item
-            :index="getRoutePathByName('layout-example-no-header')"
+            :index="getRoutePathByName('examples-layout-no-header')"
             >{{ t('example.noHeader') }}</el-menu-item
           >
           <el-menu-item
-            :index="getRoutePathByName('layout-example-no-sider')"
+            :index="getRoutePathByName('examples-layout-no-sider')"
             >{{ t('example.noSider') }}</el-menu-item
           >
           <el-menu-item
-            :index="getRoutePathByName('layout-example-no-container')"
+            :index="getRoutePathByName('examples-layout-no-container')"
             >{{ t('example.noContainer') }}</el-menu-item
           >
           <el-menu-item
-            :index="getRoutePathByName('layout-example-no-footer')"
+            :index="getRoutePathByName('examples-layout-no-footer')"
             >{{ t('example.noFooter') }}</el-menu-item
           >
           <el-menu-item
-            :index="getRoutePathByName('layout-example-no-layout')"
+            :index="getRoutePathByName('examples-layout-no-layout')"
             >{{ t('example.noLayout') }}</el-menu-item
           >
         </el-sub-menu>

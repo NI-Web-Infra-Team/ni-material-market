@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const clientTime = ref(new Date().toLocaleString());
-const { data: osData } = await useBffFetch<Record<string, string>>('/os');
+const { data: osData } =
+  await useBffExampleFetch<Record<string, string>>('/os');
 
 const serverTime = computed(() => {
   return osData.value?.serverTime;

@@ -11,7 +11,7 @@ const browserslist = readFileSync(
   .filter(Boolean);
 
 const BASE_URL = process.env.BASE_URL || '/';
-const API_BASE = process.env.NUXT_PUBLIC_API_BASE || '/bff';
+const API_BASE = process.env.NUXT_PUBLIC_API_BASE || '/bff-example';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

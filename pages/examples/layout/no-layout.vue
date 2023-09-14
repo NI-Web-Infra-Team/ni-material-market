@@ -31,7 +31,7 @@ const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
         <p>
           <el-link
             type="primary"
-            :href="getRouterByName('layout-example-no-header').path"
+            :href="getRouterByName('examples-layout-no-header').path"
             >{{
               t('example.backToText', { text: t('example.noHeader') })
             }}</el-link
