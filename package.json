@@ -70,7 +70,7 @@
     "icon-gen": "^3.0.1",
     "lint-staged": "^14.0.1",
     "npm-run-all": "^4.1.5",
-    "nuxt": "^3.7.1",
+    "nuxt": "^3.7.3",
     "nuxt-icon": "^0.5.0",
     "nuxt-vite-legacy": "^1.0.1",
     "postcss": "^8.4.29",
