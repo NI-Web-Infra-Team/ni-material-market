@@ -1,0 +1,36 @@
+name: PR Welcome
+# Note that this `pull_request_target` is vulnerable, it grants write access to a fork repo
+# DO NOT ADD ANY CHECKOUT/CACHING in this workflow
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  pr-open-greeting:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.pull_request.user.login ,'[bot]') }}
+    steps:
+      - uses: actions-cool/check-user-permission@v2
+        id: isTeamMember
+        with:
+          require: 'write'
+          username: ${{ github.event.pull_request.user.login }}
+
+      - uses: actions/github-script@v6
+        if: steps.isTeamMember.outputs.require-result == 'false'
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["Contribution::Community"]
+            })
+
+      - uses: peter-evans/create-or-update-comment@v3
+        if: steps.isTeamMember.outputs.require-result == 'false'
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            "Hello @${{ github.event.pull_request.user.login }}, thank you for contributing to us, please see our [guideline](https://github.com/NI-Web-Infra-Team/common-utils/blob/main/CONTRIBUTING.zh-CN.md) to see how to make contribution."
+            "您好 @${{ github.event.pull_request.user.login }}，感谢您为我们做出贡献，请参阅我们的[指南](https://github.com/NI-Web-Infra-Team/common-utils/blob/main/CONTRIBUTING.zh-CN.md)，了解如何进行贡献。"
