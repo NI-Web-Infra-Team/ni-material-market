@@ -19,7 +19,7 @@
     "jsonc",
     "yaml"
   ],
-  "cSpell.words": ["openapi"],
+  "cSpell.words": ["icongen", "openapi"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

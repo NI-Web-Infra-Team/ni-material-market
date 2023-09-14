@@ -22,7 +22,7 @@
     "upgrade-dep": "taze -w -i",
     "cz": "git-cz",
     "semantic-release": "semantic-release",
-    "icon-gen": "node ./scripts/generate-icons.cjs",
+    "icon-gen": "node ./scripts/generate-icons.cjs -i ./public/favicon.svg -o ./public/images -p favicon-",
     "lint": "vue-tsc --noEmit && eslint .",
     "lint-fix": "prettier . --write && eslint . --fix",
     "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi",
