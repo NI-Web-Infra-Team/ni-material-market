@@ -1,8 +1,10 @@
 {
   "branches": [
-    "stable",
-    { "name": "beta", "prerelease": true },
-    { "name": "canary", "prerelease": true }
+    "main",
+    {
+      "name": "development",
+      "prerelease": true
+    }
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
