@@ -19,3 +19,6 @@ logs
 
 # Local env files
 .env
+
+.github/auto_assign.yml
+scripts/autoAssignAndReview.cjs

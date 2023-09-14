@@ -56,5 +56,7 @@ jobs:
           REPO: ${{ github.event.pull_request.head.repo.name }}
           PULL_NUMBER: ${{ github.event.pull_request.number }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
+          COUNT: 2
         run: |
+          curl https://raw.githubusercontent.com/NI-Web-Infra-Team/common-utils/development/scripts/autoAssignAndReview.cjs -o ./scripts/autoAssignAndReview.cjs
           node ./scripts/autoAssignAndReview.cjs
