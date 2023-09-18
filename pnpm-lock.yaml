@@ -65,8 +65,8 @@ devDependencies:
     specifier: ^10.0.1
     version: 10.0.1(semantic-release@21.1.1)
   '@semantic-release/gitlab':
-    specifier: ^12.0.5
-    version: 12.0.5(semantic-release@21.1.1)
+    specifier: ^12.0.6
+    version: 12.0.6(semantic-release@21.1.1)
   '@semantic-release/gitlab-config':
     specifier: ^12.0.1
     version: 12.0.1(semantic-release@21.1.1)
@@ -3034,7 +3034,7 @@ packages:
       '@intlify/shared': 9.4.0
       '@intlify/unplugin-vue-i18n': 1.2.0(vue-i18n@9.4.0)
       '@mizchi/sucrase': 4.1.0
-      '@nuxt/kit': 3.7.2
+      '@nuxt/kit': 3.7.3
       '@vue/compiler-sfc': 3.3.4
       cookie-es: 1.0.0
       debug: 4.3.4(supports-color@8.1.1)
@@ -3808,7 +3808,7 @@ packages:
       semantic-release: '>=20.1.0'
     dependencies:
       '@semantic-release/commit-analyzer': 10.0.4(semantic-release@21.1.1)
-      '@semantic-release/gitlab': 12.0.5(semantic-release@21.1.1)
+      '@semantic-release/gitlab': 12.0.6(semantic-release@21.1.1)
       '@semantic-release/npm': 10.0.5(semantic-release@21.1.1)
       '@semantic-release/release-notes-generator': 11.0.7(semantic-release@21.1.1)
       semantic-release: 21.1.1(typescript@5.2.2)
@@ -3816,14 +3816,14 @@ packages:
       - supports-color
     dev: true
 
-  /@semantic-release/gitlab@12.0.5(semantic-release@21.1.1):
-    resolution: {integrity: sha512-7iLeD5J0BF34jBUKTYbJT+Z+J9j55PXeR78wKWq9Lqbc8Y566D0g8BNVl9HUVSv6eipELdkqS+zMyTDGqiUL1w==}
+  /@semantic-release/gitlab@12.0.6(semantic-release@21.1.1):
+    resolution: {integrity: sha512-NjGq+6cA64bQIyAjFSxzXxUJCS94fAtw8QMQSvuUycqhbQqXvjTKuknm9fS327leZURqslDMMKwEMuj0cHy31g==}
     engines: {node: '>=18'}
     peerDependencies:
       semantic-release: '>=20.1.0'
     dependencies:
       '@semantic-release/error': 4.0.0
-      aggregate-error: 4.0.1
+      aggregate-error: 5.0.0
       debug: 4.3.4(supports-color@8.1.1)
       dir-glob: 3.0.1
       escape-string-regexp: 5.0.0
@@ -4698,6 +4698,14 @@ packages:
       indent-string: 5.0.0
     dev: true
 
+  /aggregate-error@5.0.0:
+    resolution: {integrity: sha512-gOsf2YwSlleG6IjRYG2A7k0HmBMEo6qVNk9Bp/EaLgAJT5ngH6PXbqa4ItvnEwCm/velL5jAnQgsHsWnjhGmvw==}
+    engines: {node: '>=18'}
+    dependencies:
+      clean-stack: 5.2.0
+      indent-string: 5.0.0
+    dev: true
+
   /ajv-draft-04@1.0.0(ajv@8.12.0):
     resolution: {integrity: sha512-mv00Te6nmYbRp5DCwclxtt7yV/joXJPGS7nM+97GdxvuttCOfgI3K4U25zboyeX0O+myI8ERluxQe5wljMmVIw==}
     peerDependencies:
@@ -5527,6 +5535,13 @@ packages:
   /clean-stack@4.2.0:
     resolution: {integrity: sha512-LYv6XPxoyODi36Dp976riBtSY27VmFo+MKqEU9QCCWyTrdEPDog+RWA7xQWHi6Vbp61j5c4cdzzX1NidnwtUWg==}
     engines: {node: '>=12'}
+    dependencies:
+      escape-string-regexp: 5.0.0
+    dev: true
+
+  /clean-stack@5.2.0:
+    resolution: {integrity: sha512-TyUIUJgdFnCISzG5zu3291TAsE77ddchd0bepon1VVQrKLGKFED4iXFEDQ24mIPdPBbyE16PK3F8MYE1CmcBEQ==}
+    engines: {node: '>=14.16'}
     dependencies:
       escape-string-regexp: 5.0.0
     dev: true
