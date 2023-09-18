@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^11.0.0
     version: 11.0.0
   daisyui:
-    specifier: ^3.7.4
-    version: 3.7.4(ts-node@10.9.1)
+    specifier: ^3.7.5
+    version: 3.7.5(ts-node@10.9.1)
   eslint:
     specifier: ^8.49.0
     version: 8.49.0
@@ -3034,7 +3034,7 @@ packages:
       '@intlify/shared': 9.4.0
       '@intlify/unplugin-vue-i18n': 1.2.0(vue-i18n@9.4.0)
       '@mizchi/sucrase': 4.1.0
-      '@nuxt/kit': 3.7.2
+      '@nuxt/kit': 3.7.3
       '@vue/compiler-sfc': 3.3.4
       cookie-es: 1.0.0
       debug: 4.3.4(supports-color@8.1.1)
@@ -6119,8 +6119,8 @@ packages:
     resolution: {integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==}
     dev: true
 
-  /daisyui@3.7.4(ts-node@10.9.1):
-    resolution: {integrity: sha512-hAgTomIK8RDQ/RLH9Z2NxZiNVAO40w08FlhgYS/8CTFF+wggeHeNJ0qNBHWAJJzhjD8UU2u4PZ4nc4r9rwfTLw==}
+  /daisyui@3.7.5(ts-node@10.9.1):
+    resolution: {integrity: sha512-udhiBJYVvcPGXa+mL5IElke6EdddKecjbbz6m43+9IVqzK8GBwetg092Edclo42TkNboLD9nzodeesJygqZt2A==}
     engines: {node: '>=16.9.0'}
     dependencies:
       colord: 2.9.3
