@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { VDataTableVirtual } from 'vuetify/lib/labs/components.mjs';
-import type { VPagination } from 'vuetify/lib/components/VPagination/VPagination.mjs';
+import type { VPagination } from 'vuetify/lib/components/VPagination/index.mjs';
 import type { TableVirtualOptions } from '~/types/components.d';
 
 const props = defineProps<{
@@ -76,6 +76,7 @@ onMounted(() => {
 <template>
   <div class="table-virtual">
     <div ref="tableContainer" class="table-container">
+      <!-- @vue-skip -->
       <v-data-table-virtual v-bind="props.tableProps" :height="autoHeight">
         <template
           v-for="(item, key, index) in $slots"
