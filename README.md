@@ -1,4 +1,4 @@
-# Nuxt 3 with Element Plus Admin template
+# Nuxt 3 with Vuetify Admin template
 
 <p align="center">
   <a href="https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin">
@@ -42,7 +42,7 @@
 
 ```shell
 # clone 项目
-> git clone --depth=1 https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin.git
+> git clone --depth=1 https://github.com/NI-Web-Infra-Team/nuxt-vuetify-admin.git
 # 安装依赖
 > pnpm install
 # 本地启动 http://localhost:13000
@@ -53,7 +53,7 @@
 
 - [项目文档](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/wiki)
 - [Nuxt 3](https://v3.nuxtjs.org/)
-- [Element Plus](https://element-plus.org/#/zh-CN)
+- [Vuetify](https://vuetifyjs.com/zh-Hans/)
 
 ## 🤝 参与共建
 
