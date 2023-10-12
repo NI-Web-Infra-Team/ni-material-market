@@ -1,14 +1,11 @@
+import { isBoolean } from 'lodash-es';
 import type { Theme, ThemeValue } from '~/types/profile';
 
 export const useProfileStore = defineStore('profile', () => {
   const colorMode = useColorMode();
   // 菜单是否收起
   const layoutSiderCollapsed = ref(true);
-  if (process.client) {
-    layoutSiderCollapsed.value = localStorage.getItem('layoutSiderCollapsed')
-      ? localStorage.getItem('layoutSiderCollapsed') === 'true'
-      : window.innerWidth < LG;
-  }
+
   const currentTheme = computed<Theme>(() => {
     let theme = colorMode.preference;
     const defaultTheme = DEFAULT_THEME_VALUE();
@@ -21,32 +18,22 @@ export const useProfileStore = defineStore('profile', () => {
 
   /**
    * 设置主题
-   * @param val 主题值
+   * @param val 主题
    */
   function setTheme(val?: ThemeValue) {
     val = val ?? currentTheme.value.value;
     localStorage.setItem('theme', val);
     colorMode.preference = val;
-    const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
-    if (val === 'system') {
-      val = systemTheme;
-    }
-    document.documentElement.classList.remove(...THEMES.map(t => t.value));
     document.documentElement.classList.add(val);
-    document.documentElement.setAttribute('data-theme', val);
   }
 
   /**
    * 切换菜单收起状态
+   * @param bool 是否收起
    */
-  function toggleLayoutSiderCollapsed() {
-    layoutSiderCollapsed.value = !layoutSiderCollapsed.value;
-    localStorage.setItem(
-      'layoutSiderCollapsed',
-      layoutSiderCollapsed.value.toString()
-    );
+  function toggleLayoutSiderCollapsed(bool: boolean) {
+    bool = isBoolean(bool) ? bool : !layoutSiderCollapsed.value;
+    layoutSiderCollapsed.value = bool;
   }
 
   return {

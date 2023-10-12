@@ -29,13 +29,9 @@ const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
           ><code>{{ txt }}</code></pre>
         </div>
         <p>
-          <el-link
-            type="primary"
-            :href="getRouterByName('examples-layout-no-header').path"
-            >{{
-              t('example.backToText', { text: t('example.noHeader') })
-            }}</el-link
-          >
+          <NuxtLinkLocale to="/examples/layout/no-header">{{
+            t('example.backToText', { text: t('example.noHeader') })
+          }}</NuxtLinkLocale>
         </p>
       </div>
     </div>

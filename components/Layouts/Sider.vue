@@ -1,115 +1,53 @@
 <script setup lang="ts">
-import { Icon } from '#components';
+import type { RouteItem } from '~/types/project.d';
+import type { SelectedItem } from '~/types/vuetify.d';
 import { useProfileStore } from '~/stores/profile';
 
-const ChevronLeft = h(Icon, { name: 'mdi:chevron-left' });
-const ChevronRight = h(Icon, { name: 'mdi:chevron-right' });
-
-const { t } = useI18n();
 const route = useRoute();
+const router = useRouter();
 const profileStore = useProfileStore();
-const isCollapsed = computed(() => profileStore.layoutSiderCollapsed);
-const defaultActive = computed(() => route.path);
+
+const routes = reactive<RouteItem[]>(ROUTES());
+
+const isCollapsed = computed({
+  get() {
+    return !profileStore.layoutSiderCollapsed;
+  },
+  set(newVal) {
+    profileStore.toggleLayoutSiderCollapsed(!newVal);
+  }
+});
+const open = ref([
+  findPathInTree({ index: route.path }, routes, { key: 'index' }).path[0]?.index
+]);
+const selected = ref([route.path]);
 
 /**
- * 通过 name 获取路径
- * @param name 路由名称
- * @returns 路由路径
+ * @param val 选中的菜单项
  */
-function getRoutePathByName(name: string) {
-  return getRouterByName(name).path;
+async function handleSelect(val: SelectedItem) {
+  await router.push(val.id as string);
+  selected.value = [val.id as string];
 }
 </script>
 
 <template>
-  <el-aside class="aside">
-    <ClientOnly>
-      <el-menu
-        class="aside-menu"
-        router
-        :default-active="defaultActive"
-        :collapse="isCollapsed"
-      >
-        <el-menu-item :index="getRoutePathByName('index')">
-          <el-icon>
-            <Icon name="mdi:home" />
-          </el-icon>
-          <template #title>
-            {{ t('example.homePage') }}
-          </template>
-        </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('examples-about')">
-          <el-icon>
-            <Icon name="mdi:information-slab-circle-outline" />
-          </el-icon>
-          <template #title>
-            {{ t('example.about') }}
-          </template>
-        </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('examples-openapi')">
-          <el-icon>
-            <Icon name="mdi:hexagon-multiple-outline" />
-          </el-icon>
-          <template #title>{{ t('example.openApiExample') }}</template>
-        </el-menu-item>
-        <el-menu-item :index="getRoutePathByName('examples-local-cache')">
-          <el-icon>
-            <Icon name="mdi:database" />
-          </el-icon>
-          <template #title>{{ t('example.routeCacheExample') }}</template>
-        </el-menu-item>
-        <el-sub-menu index="layout">
-          <template #title>
-            <el-icon><Icon name="mdi:page-layout-sidebar-left" /></el-icon>
-            <span>{{ t('example.layoutExample') }}</span>
-          </template>
-          <el-menu-item
-            :index="getRoutePathByName('examples-layout-no-header')"
-            >{{ t('example.noHeader') }}</el-menu-item
-          >
-          <el-menu-item
-            :index="getRoutePathByName('examples-layout-no-sider')"
-            >{{ t('example.noSider') }}</el-menu-item
-          >
-          <el-menu-item
-            :index="getRoutePathByName('examples-layout-no-container')"
-            >{{ t('example.noContainer') }}</el-menu-item
-          >
-          <el-menu-item
-            :index="getRoutePathByName('examples-layout-no-footer')"
-            >{{ t('example.noFooter') }}</el-menu-item
-          >
-          <el-menu-item
-            :index="getRoutePathByName('examples-layout-no-layout')"
-            >{{ t('example.noLayout') }}</el-menu-item
-          >
-        </el-sub-menu>
-      </el-menu>
-      <el-button
-        class="tw-w-full"
-        :icon="isCollapsed ? ChevronRight : ChevronLeft"
-        @click="profileStore.toggleLayoutSiderCollapsed"
-      />
-      <template #fallback>
-        <el-skeleton
-          class="aside-menu el-menu--collapse tw-pl-5"
-          :rows="5"
-          :animated="true"
-        />
-      </template>
-    </ClientOnly>
-  </el-aside>
+  <v-navigation-drawer v-model="isCollapsed" temporary>
+    <v-list
+      v-model:opened="open"
+      v-model:selected="selected"
+      nav
+      @click:select="handleSelect"
+    >
+      <RouteMenuItem v-for="child in routes" :key="child.index" :item="child" />
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <style scoped lang="scss">
-.aside {
-  width: fit-content;
-  @apply tw-flex tw-flex-col;
-}
 .aside-menu {
-  @apply tw-flex-1 tw-overflow-auto;
-}
-.aside-menu:not(.el-menu--collapse) {
-  width: var(--el-aside-width);
+  /** 240px */
+  min-width: 15rem;
+  @apply tw-max-w-screen-sm tw-border-none;
 }
 </style>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 definePageMeta({
-  layoutTypes: ['no-footer']
+  layoutTypes: ['has-footer']
 });
 const textArr = `definePageMeta({
-  layoutTypes: ['no-footer']
+  layoutTypes: ['has-footer']
 });`.split('\n');
 const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
 </script>

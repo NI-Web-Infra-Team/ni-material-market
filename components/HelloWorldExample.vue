@@ -17,6 +17,7 @@ use([
   LegendComponent
 ]);
 
+const loading = ref(true);
 const option = ref({
   title: {
     text: 'Traffic Sources',
@@ -54,25 +55,25 @@ const option = ref({
     }
   ]
 });
+
+onMounted(async () => {
+  if (process.client) {
+    await nextTick();
+    loading.value = false;
+  }
+});
 </script>
 
 <template>
+  <v-progress-linear
+    :active="loading"
+    :indeterminate="loading"
+    absolute
+    bottom
+  ></v-progress-linear>
   <ClientOnly>
     <VChart :autoresize="true" class="chart" :option="option" />
-    <template #fallback>
-      <el-skeleton animated>
-        <template #template>
-          <el-skeleton-item class="chart" variant="rect" />
-        </template>
-      </el-skeleton>
-    </template>
   </ClientOnly>
-  <el-pagination
-    :value="1"
-    :page-size="100"
-    layout="total, prev, pager, next"
-    :total="1000"
-  />
 </template>
 
 <style scoped lang="scss">

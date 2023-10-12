@@ -2,12 +2,25 @@
 definePageMeta({
   layoutTypes: ['no-header']
 });
+const { t } = useI18n();
 const textArr = `definePageMeta({
   layoutTypes: ['no-header']
 });`.split('\n');
 const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
+const breadcrumbs = [
+  {
+    title: t('example.backToText', { text: t('example.homePage') }),
+    href: getRouterByName('index').path
+  },
+  {
+    title: t('example.noHeader')
+  }
+];
 </script>
 <template>
+  <header>
+    <v-breadcrumbs :items="breadcrumbs"></v-breadcrumbs>
+  </header>
   <div class="tw-daisy-mockup-code">
     <pre
       v-for="(txt, idx) in textArr"

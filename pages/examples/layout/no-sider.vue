@@ -8,18 +8,21 @@ const textArr = `definePageMeta({
   layoutTypes: ['no-sider']
 });`.split('\n');
 const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
+
+const breadcrumbs = [
+  {
+    title: t('example.backToText', { text: t('example.noHeader') }),
+    href: getRouterByName('examples-layout-no-header').path
+  },
+  {
+    title: t('example.noSider')
+  }
+];
 </script>
 <template>
-  <el-breadcrumb>
-    <el-breadcrumb-item
-      class="tw-mb-3"
-      :to="{ path: getRouterByName('examples-layout-no-header').path }"
-      >{{
-        t('example.backToText', { text: t('example.noHeader') })
-      }}</el-breadcrumb-item
-    >
-    <el-breadcrumb-item>{{ t('example.noSider') }}</el-breadcrumb-item>
-  </el-breadcrumb>
+  <header>
+    <v-breadcrumbs :items="breadcrumbs"></v-breadcrumbs>
+  </header>
   <div class="tw-daisy-mockup-code">
     <pre
       v-for="(txt, idx) in textArr"

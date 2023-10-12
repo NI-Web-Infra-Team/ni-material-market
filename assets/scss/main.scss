@@ -2,26 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root[class~='dark'] {
-    // 颜色来自 --el-text-color-primary: #E5EAF3;
-    --bc: 218.571 37% 93%;
-  }
-}
-
-:root {
-  --el-aside-width: 240px;
-}
-
 html,
 body,
-#app,
-#app > .el-container {
+#app {
   @apply tw-h-full;
-}
-
-#app > .el-container {
-  @apply tw-flex-col;
 }
 
 body {
@@ -31,6 +15,20 @@ body {
 .dark,
 .dark body {
   @apply tw-bg-neutral-900;
+}
+
+.v-application {
+  height: 100%;
+}
+.v-skeleton-loader__image {
+  height: 100% !important;
+}
+
+.table-full {
+  @apply tw-flex-1 tw-overflow-hidden;
+  .table-virtual {
+    @apply tw-h-full;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -55,4 +53,8 @@ body {
   ::-webkit-scrollbar-thumb {
     background-color: rgba(100, 116, 139, 0.5);
   }
+}
+
+.text-overflow-ellipsis {
+  @apply tw-overflow-hidden tw-overflow-ellipsis tw-whitespace-nowrap;
 }

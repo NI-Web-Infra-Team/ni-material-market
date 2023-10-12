@@ -1,7 +1,3 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "include": [".nuxt/nuxt.d.ts", "index.d.ts", "**/*"],
-  "compilerOptions": {
-    "types": ["element-plus/global"]
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }

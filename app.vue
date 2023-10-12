@@ -9,15 +9,20 @@ const layoutTypes = computed(() => {
 });
 </script>
 <template>
-  <LocalHead>
+  <HtmlLang>
     <NuxtLoadingIndicator :color="MAIN_COLOR" />
-    <el-config>
+    <v-app class="application">
       <echarts-config>
         <NuxtPage v-if="layoutTypes.includes('no-layout')" />
         <LayoutsContainer v-else :layout-types="layoutTypes">
           <NuxtPage />
         </LayoutsContainer>
       </echarts-config>
-    </el-config>
-  </LocalHead>
+    </v-app>
+  </HtmlLang>
 </template>
+<style scoped>
+.application {
+  background-color: rgba(var(--v-theme-primary), 0.1);
+}
+</style>

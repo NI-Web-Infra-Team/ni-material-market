@@ -9,35 +9,36 @@ const textArr = `definePageMeta({
 const highlightIndex = textArr.findIndex(txt => txt.includes('layoutTypes'));
 </script>
 <template>
-  <el-row :gutter="12" class="tw-py-3">
-    <el-col :span="8">
-      <el-card shadow="hover">
-        <p>{{ t('example.noContainer') }}</p>
-        <p>
-          <el-link
-            type="primary"
-            :href="getRouterByName('examples-layout-no-header').path"
-            >{{
-              t('example.backToText', { text: t('example.noHeader') })
-            }}</el-link
-          >
-        </p>
-      </el-card>
-    </el-col>
-    <el-col :span="8">
-      <el-card shadow="hover">
-        <div class="tw-daisy-mockup-code">
-          <pre
-            v-for="(txt, idx) in textArr"
-            :key="idx"
-            :class="
-              idx === highlightIndex
-                ? 'tw-bg-success tw-text-success-content'
-                : ''
-            "
-          ><code>{{ txt }}</code></pre>
-        </div>
-      </el-card>
-    </el-col>
-  </el-row>
+  <v-row class="tw-p-3">
+    <v-col cols="auto">
+      <v-card class="mx-auto" variant="elevated">
+        <v-card-item>
+          <p>{{ t('example.noContainer') }}</p>
+        </v-card-item>
+
+        <v-card-actions>
+          <NuxtLinkLocale to="/examples/layout/no-header">
+            {{ t('example.backToText', { text: t('example.noHeader') }) }}
+          </NuxtLinkLocale>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+    <v-col cols="auto">
+      <v-card class="mx-auto" max-width="344" variant="elevated">
+        <v-card-item>
+          <div class="tw-daisy-mockup-code">
+            <pre
+              v-for="(txt, idx) in textArr"
+              :key="idx"
+              :class="
+                idx === highlightIndex
+                  ? 'tw-bg-success tw-text-success-content'
+                  : ''
+              "
+            ><code>{{ txt }}</code></pre>
+          </div>
+        </v-card-item>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>

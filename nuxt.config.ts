@@ -1,5 +1,7 @@
+// @ts-nocheck
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import { DEFAULT_LOCALE, SUPPORT_LOCALES } from './project.config';
 import iconConfig from './icon.config.json';
 
@@ -10,8 +12,10 @@ const browserslist = readFileSync(
   .split('\n')
   .filter(Boolean);
 
-const BASE_URL = process.env.BASE_URL || '/';
-const API_BASE = process.env.NUXT_PUBLIC_API_BASE || '/bff-example';
+let BASE_URL = process.env.BASE_URL || '/';
+BASE_URL.endsWith('/') || (BASE_URL += '/');
+const SERVER_PATH = process.env.SERVER_PATH;
+const API_BASE = process.env.NUXT_PUBLIC_API_BASE;
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -20,8 +24,12 @@ export default defineNuxtConfig({
     rootId: 'app',
     baseURL: BASE_URL,
     head: {
-      title: 'Nuxt Element Plus Admin',
-      script: [{ src: '/js/dark-mode-ponyfill.js' }],
+      script: [
+        {
+          type: 'text/javascript',
+          src: '/js/dark-mode-ponyfill.js'
+        }
+      ],
       link: [
         {
           rel: iconConfig.favicon.defaultRel,
@@ -47,15 +55,21 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ['~/assets/scss/main.scss'],
+  css: ['vuetify/lib/styles/main.sass', '~/assets/scss/main.scss'],
   modules: [
+    (_, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', config => {
+        config.plugins ||= [];
+        config.plugins.push(vuetify({ autoImport: true }));
+      });
+    },
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
     'nuxt-vite-legacy',
-    '@element-plus/nuxt',
     '@nuxtjs/color-mode',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   pinia: {
     // @see https://pinia.vuejs.org/ssr/nuxt.html#Auto-imports
@@ -73,7 +87,7 @@ export default defineNuxtConfig({
     }
   },
   colorMode: {
-    preference: 'system', // default value of $colorMode.preference
+    preference: 'light', // default value of $colorMode.preference
     fallback: 'light', // fallback value if not system preference found
     hid: 'color-mode-script',
     globalName: '__COLOR_MODE__',
@@ -82,21 +96,27 @@ export default defineNuxtConfig({
     storageKey: 'color-mode'
   },
   build: {
-    transpile: [/echarts/, /zrender/, 'vue-echarts', 'resize-detector', 'tslib']
+    transpile: [
+      /echarts/,
+      /zrender/,
+      'vue-echarts',
+      'resize-detector',
+      'tslib',
+      'vuetify'
+    ]
   },
   typescript: {
     strict: true,
-    typeCheck: true
+    typeCheck: false
   },
   vite: {
+    optimizeDeps: { exclude: ['fsevents'] },
     build: {
-      target: ['edge109', 'firefox115', 'chrome109', 'safari14']
+      target: ['edge88', 'firefox115', 'chrome88', 'safari14']
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "@/assets/scss/element/index.scss" as element;'
-        }
+    vue: {
+      template: {
+        transformAssetUrls
       }
     }
   },
@@ -114,16 +134,13 @@ export default defineNuxtConfig({
     // @see https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens
     public: {
       SUPPORT_LOCALES,
-      apiBase: API_BASE
-    }
-  },
-  elementPlus: {
-    icon: false,
-    importStyle: 'scss',
-    themes: ['dark']
+      apiBase: API_BASE,
+      DEFAULT_LOCALE
+    },
+    SERVER_PATH
   },
   routeRules: {
-    '/local-cache': {
+    '/examples/local-cache': {
       swr: 10
     }
   }

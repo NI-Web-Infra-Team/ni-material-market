@@ -1,47 +1,80 @@
 <script lang="ts" setup>
 import { UseImage } from '@vueuse/components';
+import { Icon } from '#components';
+import { useProfileStore } from '~/stores/profile';
+
+defineProps<{
+  hasSider: boolean;
+}>();
 
 const config = useRuntimeConfig();
+const profileStore = useProfileStore();
+const canOpenMenu = ref(false);
+
+const isCollapsed = computed(() => profileStore.layoutSiderCollapsed);
+const CloseIcon = h(Icon, { name: 'mdi:close' }) as any;
+const MenuIcon = h(Icon, { name: 'mdi:menu' }) as any;
+onMounted(async () => {
+  await nextTick();
+  canOpenMenu.value = true;
+});
 </script>
 
 <template>
-  <el-header class="tw-border-b tw-border-base-300 layout-header-container">
+  <v-app-bar class="tw-px-2 md:tw-px-6 !tw-relative">
+    <v-btn
+      v-if="hasSider && canOpenMenu"
+      :disabled="!canOpenMenu"
+      class="tw-mr-4"
+      :icon="isCollapsed ? MenuIcon : CloseIcon"
+      @click="profileStore.toggleLayoutSiderCollapsed"
+    >
+    </v-btn>
     <NuxtLinkLocale to="/">
-      <UseImage :src="`${config.app.baseURL}logo.svg`" class="logo">
+      <UseImage :src="`${config.app.baseURL}logo.svg`" class="logo logo-device">
         <template #loading>
-          <el-skeleton animated class="tw-h-8 !tw-w-16">
-            <template #template>
-              <el-skeleton-item variant="image" class="!tw-h-full" />
-            </template>
-          </el-skeleton>
+          <v-skeleton-loader class="tw-w-16 logo-device" />
         </template>
-        <template #error> Navinfo </template>
+        <template #error>Navinfo</template>
+      </UseImage>
+      <UseImage
+        :src="`${config.app.baseURL}logo-icon-only.svg`"
+        class="logo-icon-only logo-icon-only-device"
+      >
+        <template #loading>
+          <v-skeleton-loader class="tw-w-16 logo-icon-only-device" />
+        </template>
+        <template #error>Navinfo</template>
       </UseImage>
     </NuxtLinkLocale>
-    <i class="tw-grow" />
-    <ClientOnly>
-      <el-space :size="8">
-        <LayoutsJumpToGithub />
-        <LayoutsToggleTheme />
+    <template #append>
+      <ClientOnly>
         <LayoutsToggleLocale />
-      </el-space>
-      <template #fallback>
-        <el-skeleton class="!tw-w-24 tw-h-full" :rows="1" animated>
-          <template #template>
-            <el-skeleton-item variant="rect" class="!tw-h-full" />
-          </template>
-        </el-skeleton>
-      </template>
-    </ClientOnly>
-  </el-header>
+        <LayoutsToggleTheme />
+        <LayoutsJumpToGithub />
+        <LayoutsUserInfo />
+        <template #fallback>
+          <v-skeleton-loader class="tw-w-32 tw-h-full" />
+        </template>
+      </ClientOnly>
+    </template>
+  </v-app-bar>
 </template>
 
 <style lang="scss" scoped>
 .layout-header-container {
   @apply tw-flex tw-p-4;
 }
-.logo {
-  margin: 0 16px;
+.logo,
+.logo-icon-only {
   @apply tw-h-8;
+}
+
+.logo-device {
+  @apply tw-hidden md:tw-block;
+}
+
+.logo-icon-only-device {
+  @apply tw-block md:tw-hidden;
 }
 </style>

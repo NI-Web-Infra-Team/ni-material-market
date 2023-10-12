@@ -3,6 +3,8 @@ declare module '#app' {
   interface PageMeta {
     /** layout 的类型 */
     layoutTypes?: LayoutType | LayoutType[];
+    /** 是否需要登录 */
+    needAuth?: boolean;
   }
 }
 

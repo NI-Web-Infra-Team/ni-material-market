@@ -1,11 +1,18 @@
+import type { ThemeDefinition } from 'vuetify';
 import type { Theme, ThemeValue } from '~/types/profile';
 
 export const MAIN_COLOR = 'rgba(49, 115, 185, 1)';
+export const SECONDARY_COLOR = 'rgba(49, 115, 185, 0.8)';
+
+export const SYSTEM_THEME = 'system';
+export const LIGHT_THEME = 'light';
+export const DARK_THEME = 'dark';
+export const DEFAULT_THEME = LIGHT_THEME;
 
 export const THEMES: Theme[] = [
-  { labelKey: 'theme.system', value: 'system', icon: 'mdi:desktop-mac' },
-  { labelKey: 'theme.light', value: 'light', icon: 'mdi:weather-sunny' },
-  { labelKey: 'theme.dark', value: 'dark', icon: 'mdi:weather-night' }
+  { labelKey: 'theme.system', value: SYSTEM_THEME, icon: 'mdi:desktop-mac' },
+  { labelKey: 'theme.light', value: LIGHT_THEME, icon: 'mdi:weather-sunny' },
+  { labelKey: 'theme.dark', value: DARK_THEME, icon: 'mdi:weather-night' }
 ];
 
 /**
@@ -395,5 +402,33 @@ export const ECHARTS_DARK = {
         color: '#eeeeee'
       }
     }
+  }
+};
+
+export const light: ThemeDefinition = {
+  dark: false,
+  colors: {
+    background: '#ffffff',
+    surface: '#ffffff',
+    primary: MAIN_COLOR,
+    secondary: SECONDARY_COLOR,
+    error: '#f56c6c',
+    info: '#909399',
+    success: '#67c23a',
+    warning: '#e6a23c'
+  }
+};
+
+export const dark: ThemeDefinition = {
+  dark: true,
+  colors: {
+    background: '#000000',
+    surface: '#0f172a',
+    primary: MAIN_COLOR,
+    secondary: SECONDARY_COLOR,
+    error: '#f56c6c',
+    info: '#909399',
+    success: '#67c23a',
+    warning: '#e6a23c'
   }
 };

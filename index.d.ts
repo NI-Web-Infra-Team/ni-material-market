@@ -1,3 +1,7 @@
+declare global {
+  interface Window {}
+}
+
 // workaround for https://github.com/nuxt-modules/icon/pull/63
 import * as _nuxt_schema from '@nuxt/schema';
 
@@ -12,3 +16,5 @@ declare module '@nuxt/schema' {
     nuxtIcon?: NuxtIconModuleOptions;
   }
 }
+
+export {};

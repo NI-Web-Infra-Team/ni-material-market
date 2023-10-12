@@ -1,10 +1,12 @@
 <script lang="ts" setup>
+import { Icon } from '#components';
 import type { Os } from '~/types/example.d';
 
 const repositoryUrl = ref('');
+const Github = h(Icon, { name: 'mdi:github' }) as any;
 
 onMounted(async () => {
-  const { data: osData } = await useBffExampleFetch<Os>('/os');
+  const { data: osData } = await useBffFetch<Os>('/os-example');
   repositoryUrl.value = osData.value?.repositoryUrl ?? '/';
 });
 
@@ -17,7 +19,5 @@ function jumpToGithub() {
 </script>
 
 <template>
-  <el-button @click="jumpToGithub">
-    <Icon name="mdi:github" />
-  </el-button>
+  <v-btn :icon="Github" @click="jumpToGithub" />
 </template>

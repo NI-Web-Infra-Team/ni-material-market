@@ -47,10 +47,17 @@ const h = `
  * @param name 名称
  */
 async function handleGenerateApi(name) {
+  let isUrl = false;
+  try {
+    isUrl = !!new URL(WEB_API_URL);
+  } catch {
+    isUrl = false;
+  }
   const { files } = await generateApi({
     name: `${name ?? NAME}.d.ts`,
     output: OUTPUT,
-    url: `${WEB_API_URL}${name ?? ''}`,
+    url: isUrl ? `${WEB_API_URL}${name ?? ''}` : undefined,
+    input: isUrl ? undefined : resolve(process.cwd(), WEB_API_URL),
     generateClient: false
   });
   for (const { fileName, fileExtension, fileContent } of files) {

@@ -14,9 +14,13 @@ export default {
   noHeader: '无 Header',
   noSider: '无 Sider',
   noContainer: '无 Container',
-  noFooter: '无 Footer',
+  hasFooter: '有 Footer',
   noLayout: '无 Layout',
   backToText: '返回到{text}',
   LoremIpsum:
-    '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。'
+    '滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。',
+  clientTime: '客户端时间',
+  serverTime: '服务端时间',
+  localCacheDesc:
+    '此页面在示例中使用内存进行缓存，缓存时间为 10 秒。\n多次刷新页面，客户端时间会随着 js 的执行变化，服务端会因为缓存不会改变。'
 };
