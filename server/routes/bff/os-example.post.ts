@@ -25,7 +25,6 @@ export default defineEventHandler(() => {
     totalmem: `${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB`,
     type: os.type(),
     version: pkgJson.version,
-    serverTime: new Date().toLocaleString(),
-    repositoryUrl: pkgJson.repository.url
+    serverTime: new Date().toLocaleString()
   } as Os;
 });

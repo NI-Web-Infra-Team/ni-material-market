@@ -5,6 +5,7 @@
   "private": true,
   "packageManager": "pnpm@8.9.0",
   "repository": {
+    "type": "git",
     "url": "https://github.com/NI-Web-Infra-Team/nuxt-vuetify-admin"
   },
   "engines": {
@@ -12,19 +13,21 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "nuxt prepare",
-    "build": "nuxt build",
-    "build-canary": "nuxt build --dotenv .env.canary",
-    "dev": "nuxt dev --port 13000 --host --dotenv .env.development",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "postinstall": "run-p nuxt-prepare generate-pkg-type",
+    "nuxt-prepare": "nuxt prepare",
+    "build": "run-s nuxt-build pm2-copy-to-output",
+    "nuxt-build": "nuxt build",
+    "dev": "run-s generate-pkg-type nuxt-dev",
+    "nuxt-dev": "nuxt dev --port 13000 --dotenv .env.development",
     "upgrade-dep": "taze -w -i",
     "cz": "git-cz",
     "semantic-release": "semantic-release",
-    "icon-gen": "node ./scripts/generate-icons.cjs",
+    "icon-gen": "node ./scripts/generate-icons.cjs -i ./public/favicon.svg -o ./public/images -p favicon-",
     "lint": "vue-tsc --noEmit && eslint .",
     "lint-fix": "prettier . --write && eslint . --fix",
-    "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi"
+    "generate-api-type": "node ./scripts/generate-api-type.cjs -u https://petstore.swagger.io/v2/swagger.json -o ./types/__services__ -n PetStoreApi",
+    "generate-pkg-type": "quicktype package.json -o ./types/__quicktype__/package.d.ts --just-types",
+    "pm2-copy-to-output": "fse copy --errorOnExist ecosystem.config.cjs .output/ecosystem.config.cjs"
   },
   "dependencies": {
     "@trpc/client": "^10.40.0",
@@ -38,6 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@atao60/fse-cli": "^0.1.9",
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@mdi/js": "^7.3.67",
@@ -70,10 +74,13 @@
     "git-cz": "^4.9.0",
     "icon-gen": "^3.0.1",
     "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
     "nuxt": "^3.7.4",
     "nuxt-icon": "^0.5.0",
+    "octokit": "^3.1.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
+    "quicktype": "^23.0.76",
     "sass": "^1.69.3",
     "sharp": "^0.32.6",
     "simple-git-hooks": "^2.9.0",
@@ -90,10 +97,5 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
   }
 }
