@@ -45,7 +45,7 @@
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@mdi/js": "^7.3.67",
-    "@mockoon/cli": "^4.1.0",
+    "@mockoon/cli": "^5.0.0",
     "@nuxt/devtools": "^0.8.5",
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",

@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^7.3.67
     version: 7.3.67
   '@mockoon/cli':
-    specifier: ^4.1.0
-    version: 4.1.0(@types/node@20.8.4)(openapi-types@12.1.3)(typescript@5.2.2)
+    specifier: ^5.0.0
+    version: 5.0.0(@types/node@20.8.4)(openapi-types@12.1.3)(typescript@5.2.2)
   '@nuxt/devtools':
     specifier: ^0.8.5
     version: 0.8.5(nuxt@3.7.4)(vite@4.4.11)
@@ -2429,20 +2429,19 @@ packages:
       lines-and-columns: 1.2.4
     dev: true
 
-  /@mockoon/cli@4.1.0(@types/node@20.8.4)(openapi-types@12.1.3)(typescript@5.2.2):
-    resolution: {integrity: sha512-x7LnXvMg+ESYAloaZEiivmSAPnC9PUEEoKbVTch7gkLSDeW7hml2axCJ7GABkg/gUsoDaHyDGA10D6dDkQi4dg==}
-    engines: {node: '>=16'}
+  /@mockoon/cli@5.0.0(@types/node@20.8.4)(openapi-types@12.1.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-LDmLf26669qWqgX3uDkQNhcDaQyOTp+kO86Oy4u4v7WxT7kYT5l7NEC8cCaxQls6bnCqaWtDFrKg67mMWIFPZw==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      '@mockoon/commons': 4.1.0
-      '@mockoon/commons-server': 4.1.0(openapi-types@12.1.3)
-      '@oclif/core': 2.9.4(@types/node@20.8.4)(typescript@5.2.2)
-      '@oclif/plugin-help': 5.2.14(@types/node@20.8.4)(typescript@5.2.2)
-      axios: 0.27.2
+      '@mockoon/commons': 5.0.0
+      '@mockoon/commons-server': 5.0.0(openapi-types@12.1.3)
+      '@oclif/core': 2.15.0(@types/node@20.8.4)(typescript@5.2.2)
+      '@oclif/plugin-help': 5.2.20(@types/node@20.8.4)(typescript@5.2.2)
       jsonfile: 6.1.0
       mkdirp: 3.0.1
       mustache: 4.2.0
-      tslib: 2.6.0
+      tslib: 2.6.2
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -2454,26 +2453,27 @@ packages:
       - typescript
     dev: true
 
-  /@mockoon/commons-server@4.1.0(openapi-types@12.1.3):
-    resolution: {integrity: sha512-N0bK6SESlwPN2f97CHt8nIuYn1akHHmUl4FmwtRpCpJV7D1Ste1l6K+QTodZMBjONpvXO1mEVBQnXb1/P53cKQ==}
-    engines: {node: '>=16'}
+  /@mockoon/commons-server@5.0.0(openapi-types@12.1.3):
+    resolution: {integrity: sha512-GKlUKxsWAI11MPc0ebstQ3f3ZpecOEAN0luRtZctbfbFV6WpOFEGOhIrb9nLJ34S4xw3B0pUUS1Cr9gFc+FJlA==}
+    engines: {node: '>=18'}
     dependencies:
       '@apidevtools/swagger-parser': 10.1.0(openapi-types@12.1.3)
       '@faker-js/faker': 7.6.0
-      '@mockoon/commons': 4.1.0
+      '@mockoon/commons': 5.0.0
       append-field: 1.0.0
       busboy: 1.6.0
       cookie-parser: 1.4.6
-      date-fns: 2.29.3
+      date-fns: 2.30.0
       express: 4.18.2
-      handlebars: 4.7.7
+      handlebars: 4.7.8
       http-proxy-middleware: 2.0.6
+      jsonpath-plus: 7.2.0
       killable: 1.0.1
       mime-types: 2.1.35
       object-path: 0.11.8
-      qs: 6.11.0
+      qs: 6.11.2
       typed-emitter: 2.1.0
-      winston: 3.9.0
+      winston: 3.10.0
       xml-js: 1.6.11
     transitivePeerDependencies:
       - '@types/express'
@@ -2482,10 +2482,10 @@ packages:
       - supports-color
     dev: true
 
-  /@mockoon/commons@4.1.0:
-    resolution: {integrity: sha512-bU7pLeoQS5F6xN8ANViudEHvxKIZCva7DOJHqL1QsJHutVMgfIx+ad6oSINuofyZ7EmDCk+jZsRpMGaCThM9bw==}
+  /@mockoon/commons@5.0.0:
+    resolution: {integrity: sha512-XsG/6N8uNaUYu/Q5PP7g3DGzUo5lY9mMDsBiJgdyVzNzGlTJYP/jDzmy8/AhoStOkA1lqNxp7OXOiamn9/zFnw==}
     dependencies:
-      joi: 17.8.3
+      joi: 17.10.2
     dev: true
 
   /@netlify/functions@2.3.0:
@@ -2955,8 +2955,8 @@ packages:
       - vue-router
     dev: true
 
-  /@oclif/core@2.9.4(@types/node@20.8.4)(typescript@5.2.2):
-    resolution: {integrity: sha512-eFRRpV+tJ6nMkhay2M9IppjSF3atRrgj6Qo83qUslaFSAW3NAl4mIhx1mKmTwQx5rgSrar03xICtSAWJ6gZtag==}
+  /@oclif/core@2.15.0(@types/node@20.8.4)(typescript@5.2.2):
+    resolution: {integrity: sha512-fNEMG5DzJHhYmI3MgpByTvltBOMyFcnRIUMxbiz2ai8rhaYgaTHMG3Q38HcosfIvtw9nCjxpcQtC8MN8QtVCcA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       '@types/cli-progress': 3.11.3
@@ -2968,7 +2968,6 @@ packages:
       cli-progress: 3.12.0
       debug: 4.3.4(supports-color@8.1.1)
       ejs: 3.1.9
-      fs-extra: 9.1.0
       get-package-type: 0.1.0
       globby: 11.1.0
       hyperlinker: 1.0.0
@@ -2978,7 +2977,6 @@ packages:
       natural-orderby: 2.0.3
       object-treeify: 1.1.33
       password-prompt: 1.1.3
-      semver: 7.5.4
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
@@ -2996,11 +2994,11 @@ packages:
       - typescript
     dev: true
 
-  /@oclif/plugin-help@5.2.14(@types/node@20.8.4)(typescript@5.2.2):
-    resolution: {integrity: sha512-7hMLc6zqxeRfG4nvHHQPpbaBj60efM3ULFkCpHZkdLms/ezIkNo40F661QuraIjMP/NN+U6VSfBCGuPkRyxVkA==}
+  /@oclif/plugin-help@5.2.20(@types/node@20.8.4)(typescript@5.2.2):
+    resolution: {integrity: sha512-u+GXX/KAGL9S10LxAwNUaWdzbEBARJ92ogmM7g3gDVud2HioCmvWQCDohNRVZ9GYV9oKwZ/M8xwd6a1d95rEKQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      '@oclif/core': 2.9.4(@types/node@20.8.4)(typescript@5.2.2)
+      '@oclif/core': 2.15.0(@types/node@20.8.4)(typescript@5.2.2)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4953,11 +4951,6 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: true
 
-  /at-least-node@1.0.0:
-    resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
-    engines: {node: '>= 4.0.0'}
-    dev: true
-
   /autoprefixer@10.4.16(postcss@8.4.31):
     resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -6066,9 +6059,11 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /date-fns@2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.23.2
     dev: true
 
   /dateformat@3.0.3:
@@ -7471,16 +7466,6 @@ packages:
       universalify: 2.0.0
     dev: true
 
-  /fs-extra@9.1.0:
-    resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      at-least-node: 1.0.0
-      graceful-fs: 4.2.11
-      jsonfile: 6.1.0
-      universalify: 2.0.0
-    dev: true
-
   /fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
@@ -7850,19 +7835,6 @@ packages:
       ufo: 1.3.1
       uncrypto: 0.1.3
       unenv: 1.7.4
-
-  /handlebars@4.7.7:
-    resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
-    engines: {node: '>=0.4.7'}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.8
-      neo-async: 2.6.2
-      source-map: 0.6.1
-      wordwrap: 1.0.0
-    optionalDependencies:
-      uglify-js: 3.17.4
-    dev: true
 
   /handlebars@4.7.8:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
@@ -8625,8 +8597,8 @@ packages:
     hasBin: true
     dev: true
 
-  /joi@17.11.0:
-    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
+  /joi@17.10.2:
+    resolution: {integrity: sha512-hcVhjBxRNW/is3nNLdGLIjkgXetkeGc2wyhydhz8KumG23Aerk4HPjU5zaPAMRqXQFc0xNqXTC7+zQjxr0GlKA==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -8635,8 +8607,8 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: true
 
-  /joi@17.8.3:
-    resolution: {integrity: sha512-q5Fn6Tj/jR8PfrLrx4fpGH4v9qM6o+vDUfD4/3vxxyg34OmKcNqYZ1qn2mpLza96S8tL0p0rIw2gOZX+/cTg9w==}
+  /joi@17.11.0:
+    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
@@ -8760,6 +8732,11 @@ packages:
   /jsonparse@1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
+    dev: true
+
+  /jsonpath-plus@7.2.0:
+    resolution: {integrity: sha512-zBfiUPM5nD0YZSBT/o/fbCUlCcepMIdP0CJZxM1+KgA4f2T206f6VAg9e7mX35+KlMaIc5qXW34f3BnwJ3w+RA==}
+    engines: {node: '>=12.0.0'}
     dev: true
 
   /jsonwebtoken@9.0.2:
@@ -11411,6 +11388,13 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /qs@6.11.2:
+    resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: true
+
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
@@ -13109,10 +13093,6 @@ packages:
     resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
     dev: false
 
-  /tslib@2.6.0:
-    resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
-    dev: true
-
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
@@ -14212,8 +14192,8 @@ packages:
       triple-beam: 1.4.1
     dev: true
 
-  /winston@3.9.0:
-    resolution: {integrity: sha512-jW51iW/X95BCW6MMtZWr2jKQBP4hV5bIDq9QrIjfDk6Q9QuxvTKEAlpUNAzP+HYHFFCeENhph16s0zEunu4uuQ==}
+  /winston@3.10.0:
+    resolution: {integrity: sha512-nT6SIDaE9B7ZRO0u3UvdrimG0HkB7dSTAgInQnNR2SOPJ4bvq5q79+pXLftKmP52lJGW15+H5MCK0nM9D3KB/g==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       '@colors/colors': 1.5.0
