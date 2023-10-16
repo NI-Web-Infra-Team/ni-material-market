@@ -64,7 +64,7 @@
     "@vueuse/core": "^10.5.0",
     "@vueuse/nuxt": "^10.5.0",
     "autoprefixer": "^10.4.16",
-    "commander": "^11.0.0",
+    "commander": "^11.1.0",
     "daisyui": "^3.9.2",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
