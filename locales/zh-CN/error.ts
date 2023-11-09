@@ -1,8 +1,0 @@
-export default {
-  signInError: '登录已失效，请重新登录！',
-  systemError: '系统错误，请稍后再试！',
-  unauthorizedOrForbidden: '没有权限，请联系管理员或重新登录！',
-  notFound: '未找到该页面！',
-  internalServerError: '服务器错误，请联系管理员或稍后重试！',
-  backToHome: '返回首页'
-};

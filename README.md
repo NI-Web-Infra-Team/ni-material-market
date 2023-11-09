@@ -1,7 +1,7 @@
-# Nuxt 3 with Vuetify Admin template
+# Ni Material Market
 
 <p align="center">
-  <a href="https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin">
+  <a href="https://github.com/NI-Web-Infra-Team/ni-material-market">
     <img src="https://img.shields.io/badge/%F0%9F%8F%97-%E5%BB%BA%E8%AE%BE%E4%B8%AD-%23cacaca" />
   </a>
   <a href="https://nodejs.org/dist/latest-v18.x/docs/api/">
@@ -9,23 +9,15 @@
   </a>
 </p>
 
-我们提供了一个[在线体验](https://nuxt3.navinfo.dev/)的环境。
+[在线文档](https://ni-material-market.navinfo.dev)
 
 ## ✨ 特性
 
 - [x] 支持 TypeScript
 - [x] 支持 SSR
 - [x] 支持 Tailwind CSS
-- [x] 支持多语言
 - [x] 支持暗黑模式
-- [x] 支持自动化生成 Icon
-- [x] 支持触摸设备
-- [x] 支持自动化生成 CHANGELOG
-- [x] 支持 Eslint
-- [ ] 支持 Docker 部署
-- [ ] 支持 CI/CD
-- [x] 支持 SSR 本地缓存
-- [x] 支持通过 OpenAPI/Swagger 自动化生成 TS 类型
+- [x] 支持移动端设备
 
 ## 🖥 兼容环境
 
@@ -42,23 +34,22 @@
 
 ```shell
 # clone 项目
-> git clone --depth=1 https://github.com/NI-Web-Infra-Team/nuxt-vuetify-admin.git
+> git clone --depth=1 https://github.com/NI-Web-Infra-Team/ni-material-market.git
 # 安装依赖
 > pnpm install
-# 本地启动 http://localhost:13000
+# 本地启动
 > pnpm run dev
 ```
 
 ## 📖 文档
 
-- [项目文档](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/wiki)
-- [Nuxt 3](https://v3.nuxtjs.org/)
+- [项目文档](https://github.com/NI-Web-Infra-Team/ni-material-market/wiki)
 - [Vuetify](https://vuetifyjs.com/zh-Hans/)
 
 ## 🤝 参与共建
 
-请查看我们的[贡献指南](https://github.com/NI-Web-Infra-Team/nuxt-element-plus-admin/blob/main/.github/CONTRIBUTING.zh-CN.md)。
+请查看我们的[贡献指南](https://github.com/NI-Web-Infra-Team/ni-material-market/blob/main/.github/CONTRIBUTING.zh-CN.md)。
 
 ### 🛡 License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fnuxt-element-plus-admin?ref=badge_large&issueType=license)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fni-material-market.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FNI-Web-Infra-Team%2Fni-material-market?ref=badge_large&issueType=license)
