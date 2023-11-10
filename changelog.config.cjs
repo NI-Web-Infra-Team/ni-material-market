@@ -1,3 +1,4 @@
+/*eslint-env node*/
 module.exports = {
   format: '{type}{scope}: {subject}',
   list: [
@@ -24,20 +25,11 @@ module.exports = {
   ],
   maxMessageLength: 128,
   minMessageLength: 3,
-  questions: [
-    'type',
-    'scope',
-    'subject',
-    'body',
-    'breaking',
-    'issues',
-    'lerna'
-  ],
+  questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
   scopes: [],
   types: {
     build: {
-      description:
-        '影响构建系统或外部依赖项的更改(示例范围:gulp、broccoli、npm)',
+      description: '影响构建系统或外部依赖项的更改(示例范围:gulp、broccoli、npm)',
       value: 'build'
     },
     revert: {
@@ -69,8 +61,7 @@ module.exports = {
       value: 'chore'
     },
     ci: {
-      description:
-        '对CI配置文件和脚本的更改(示例范围:Travis, Circle, BrowserStack, SauceLabs)',
+      description: '对CI配置文件和脚本的更改(示例范围:Travis, Circle, BrowserStack, SauceLabs)',
       value: 'ci'
     },
     docs: {

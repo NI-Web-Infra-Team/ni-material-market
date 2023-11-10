@@ -22,17 +22,16 @@
       }
     ],
     [
-      "@semantic-release/gitlab",
+      "@semantic-release/exec",
       {
-        "gitlabUrl": "https://gitlab.navinfo.com/"
+        "successCmd": "echo success"
       }
     ],
     [
-      "@semantic-release/exec",
+      "@semantic-release/github",
       {
-        "successCmd": "echo hello"
+        "assets": [{ "path": "CHANGELOG.md", "label": "Changelog" }]
       }
     ]
-  ],
-  "extends": "@semantic-release/gitlab-config"
+  ]
 }
