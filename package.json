@@ -2,7 +2,7 @@
   "name": "ni-material-market",
   "version": "0.0.0",
   "license": "MIT",
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.10.3",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
@@ -26,7 +26,7 @@
     "vuetify": "^3.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.0",
+    "@commitlint/cli": "^18.4.1",
     "@commitlint/config-conventional": "^18.4.0",
     "@rushstack/eslint-patch": "^1.5.1",
     "@semantic-release/changelog": "^6.0.3",
@@ -49,9 +49,9 @@
     "eslint-plugin-vue": "^9.18.1",
     "git-cz": "^4.9.0",
     "jsdom": "^22.1.0",
-    "lint-staged": "^15.0.2",
+    "lint-staged": "^15.1.0",
     "npm-run-all2": "^6.1.1",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "simple-git-hooks": "^2.9.0",
     "start-server-and-test": "^2.0.2",
     "taze": "^0.12.0",
