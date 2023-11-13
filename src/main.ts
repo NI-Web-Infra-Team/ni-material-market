@@ -1,3 +1,4 @@
+import '@/assets/base.scss';
 import { createApp } from 'vue';
 import vuetify from '@/plugins/vuetify';
 import { createPinia } from 'pinia';
