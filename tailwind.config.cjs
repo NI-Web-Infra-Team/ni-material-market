@@ -5,6 +5,9 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: [],
-  prefix: 'tw-'
+  plugins: [require('daisyui')],
+  prefix: 'tw-',
+  daisyui: {
+    prefix: 'daisy-'
+  }
 };

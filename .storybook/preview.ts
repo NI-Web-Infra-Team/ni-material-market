@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/vue3';
 import { setup } from '@storybook/vue3';
 import vuetify from './vuetify';
+import '../src/assets/base.scss';
 
 setup((app) => {
   app.use(vuetify);

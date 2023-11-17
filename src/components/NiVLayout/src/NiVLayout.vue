@@ -6,6 +6,7 @@ withDefaults(defineProps<NiVLayoutProps>(), {
   fullHeight: false
 });
 </script>
+
 <template>
   <v-layout
     :full-height="fullHeight"
@@ -38,7 +39,6 @@ withDefaults(defineProps<NiVLayoutProps>(), {
 
 .ni-v-layout--fit-screen {
   min-height: 100dvh;
-  min-width: 100dvw;
   overflow: auto;
 }
 </style>

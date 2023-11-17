@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NiVLayout from '@/components/NiVLayout';
-import { mdiAccount, mdiMenu } from '@mdi/js';
+import IconMdiAccount from '~icons/mdi/account';
+import IconMdiMenu from '~icons/mdi/menu';
 </script>
 
 <template>
@@ -8,13 +9,13 @@ import { mdiAccount, mdiMenu } from '@mdi/js';
     <template #header>
       <v-app-bar>
         <template v-slot:prepend>
-          <v-btn :icon="mdiMenu"></v-btn>
+          <v-btn :icon="IconMdiMenu"></v-btn>
         </template>
 
         <v-app-bar-title>布局</v-app-bar-title>
 
         <template v-slot:append>
-          <v-btn :icon="mdiAccount"></v-btn>
+          <v-btn :icon="IconMdiAccount"></v-btn>
         </template>
       </v-app-bar>
     </template>
