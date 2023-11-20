@@ -167,8 +167,8 @@ devDependencies:
     specifier: ^0.12.0
     version: 0.12.0
   type-fest:
-    specifier: ^4.7.1
-    version: 4.7.1
+    specifier: ^4.8.1
+    version: 4.8.1
   typescript:
     specifier: ~5.2.2
     version: 5.2.2
@@ -9886,7 +9886,7 @@ packages:
       '@babel/code-frame': 7.22.13
       index-to-position: 0.1.2
       json-parse-even-better-errors: 3.0.0
-      type-fest: 4.7.1
+      type-fest: 4.8.1
     dev: true
 
   /parse5@7.1.2:
@@ -10639,7 +10639,7 @@ packages:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 7.1.1
-      type-fest: 4.7.1
+      type-fest: 4.8.1
     dev: true
 
   /read-pkg@9.0.0:
@@ -10649,7 +10649,7 @@ packages:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 8.0.1
-      type-fest: 4.7.1
+      type-fest: 4.8.1
     dev: true
 
   /readable-stream@1.0.34:
@@ -11973,6 +11973,11 @@ packages:
 
   /type-fest@4.7.1:
     resolution: {integrity: sha512-iWr8RUmzAJRfhZugX9O7nZE6pCxDU8CZ3QxsLuTnGcBLJpCaP2ll3s4eMTBoFnU/CeXY/5rfQSuAEsTGJO4y8A==}
+    engines: {node: '>=16'}
+    dev: true
+
+  /type-fest@4.8.1:
+    resolution: {integrity: sha512-ShaaYnjf+0etG8W/FumARKMjjIToy/haCaTjN2dvcewOSoNqCQzdgG7m2JVOlM5qndGTHjkvsrWZs+k/2Z7E0Q==}
     engines: {node: '>=16'}
     dev: true
 
