@@ -1,6 +1,6 @@
 {/* NiVLayout.mdx */}
 
-import { Canvas, Meta, Source } from '@storybook/blocks';
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
 
 import * as NiVLayoutStories from './NiVLayout.stories';
 
@@ -8,9 +8,21 @@ import * as NiVLayoutStories from './NiVLayout.stories';
 
 # 布局 (NiVLayout)
 
-A NiVLayout is a square box that can be activated or deactivated when ticked.
+NiVLayout 组件用于传统布局页面，包含了 header、footer、default 等插槽。
+组件基于 Vuetify 实现，可与 Vuetify 组件配合使用。
 
-Use NiVLayoutes to select one or more options from a list of choices.
+更多细节请查看 Vuetify [文档](https://vuetifyjs.com/zh-Hans/features/application-layout/)。
+
+## 示例
+
+### 传统布局
 
 <Canvas of={NiVLayoutStories.Layout} />
-<Canvas of={NiVLayoutStories.FitScreen} />
+
+### 应用栏随着滚动展现不同行为
+
+<Canvas of={NiVLayoutStories.Appbar} />
+
+## 参数
+
+<ArgTypes of={NiVLayoutStories} />

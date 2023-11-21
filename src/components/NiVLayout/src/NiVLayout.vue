@@ -13,8 +13,11 @@ withDefaults(defineProps<NiVLayoutProps>(), {
     class="ni-v-layout"
     :class="{ 'ni-v-layout--fit-screen': fitScreen, 'ni-v-layout--full-height': fullHeight }"
   >
+    <!-- @slot 推荐使用 v-app-bar 组件 @types asd -->
     <slot name="header"></slot>
+    <!-- @slot 内容区域，推荐使用 v-main 嵌套 v-container -->
     <slot></slot>
+    <!-- @slot 推荐使用 v-footer 组件 -->
     <slot name="footer"></slot>
   </v-layout>
 </template>
