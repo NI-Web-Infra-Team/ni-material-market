@@ -26,3 +26,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+# 调试用
+src/views/HomeView.vue
