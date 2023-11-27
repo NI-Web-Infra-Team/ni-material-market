@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^13.5.1
     version: 13.5.1
   daisyui:
-    specifier: ^4.3.1
-    version: 4.4.2(postcss@8.4.31)
+    specifier: ^4.4.9
+    version: 4.4.9(postcss@8.4.31)
   doiuse:
     specifier: ^6.0.2
     version: 6.0.2
@@ -6084,8 +6084,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /daisyui@4.4.2(postcss@8.4.31):
-    resolution: {integrity: sha512-Ecg5loskj9dkaAnTSK5Xn5jb24TqDlQIg/NJ025jCkw2S/zw12btjvLgY2Sv5Ws1DFVoVBRs3XYXyojZG7zVnw==}
+  /daisyui@4.4.9(postcss@8.4.31):
+    resolution: {integrity: sha512-Wqk1f3rQbiDSMfzC/ZufQQi139dY4mCMZJ/hmYIIGpCi0MFndU0wJ575tEGzi2YrCZOagsWhbOeWE7DD/B5pVw==}
     engines: {node: '>=16.9.0'}
     dependencies:
       css-selector-tokenizer: 0.8.0
